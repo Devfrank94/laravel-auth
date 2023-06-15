@@ -44,8 +44,18 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
+                            {{-- scritta in questo modo richiama varivbili per sito multilanguage
+                            <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a> --}}
+                            <a class="nav-link" href="{{ route('home') }}">Vai il sito</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('contacts') }}">Contatti</a>
+                        </li>
+                        @auth()
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.stats') }}">Statistiche</a>
+                        </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->

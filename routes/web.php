@@ -16,13 +16,21 @@ use App\Http\Controllers\Admin\DashboardController;
 |
 */
 
+
+// Rotte pubbliche
 Route::get('/', [PageController::class, 'index'])->name('home');
 
+Route::get('/contacts', [PageController::class, 'contacts'])->name('contacts');
+
+
+
+// rotte valide se loggato
 Route::middleware(['auth', 'verified'])
 ->name('admin.')
 ->prefix('admin')
 ->group( function() {
     Route::get('/', [DashboardController::class, 'index'])->name('home');
+    Route::get('/stats', [DashboardController::class, 'stats'])->name('stats');
 });
 
 require __DIR__.'/auth.php';
