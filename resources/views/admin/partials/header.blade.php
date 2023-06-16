@@ -1,5 +1,5 @@
-<header>
-  <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
+<header class="bg-dark shadow-sm">
+  <nav class="navbar navbar-expand-md navbar-light">
       <div class="container-fluid">
           <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
               <div class="logo_laravel">
@@ -52,12 +52,12 @@
                         <i class="fa-solid fa-user-secret" style="color: #ffffff;"></i>   {{ Auth::user()->name }}
                       </a>
 
-                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="{{ url('dashboard') }}"><i class="fa-solid fa-chart-column" style="color: #212529;"></i>   {{__('Dashboard')}}</a>
-                          <a class="dropdown-item" href="{{ url('profile') }}"><i class="fa-solid fa-id-card" style="color: #212529"></i>   {{__('Profile')}}</a>
+                      <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="{{ url('dashboard') }}"><i class="fa-solid fa-chart-column"></i>   {{__('Dashboard')}}</a>
+                          <a class="dropdown-item" href="{{ url('profile') }}"><i class="fa-solid fa-id-card"></i>   {{__('Profile')}}</a>
                           <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                               document.getElementById('logout-form').submit();">
-                              <i class="fa-solid fa-arrow-right-from-bracket" style="color: #212529;"></i>   {{ __('Logout') }}
+                              <i class="fa-solid fa-arrow-right-from-bracket"></i>   {{ __('Logout') }}
                           </a>
 
                           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

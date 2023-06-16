@@ -22,13 +22,18 @@
 </head>
 
 <body>
-    <div id="app" class="main-wrapper">
+  @include('admin.partials.header')
 
-        @include('admin.partials.header')
-        <aside>Aside</aside>
+    <div id="app" class="main-wrapper @auth d-flex @endauth">
 
 
-        <main class="">
+      @auth
+      @include('admin.partials.aside')
+
+      @endauth
+
+
+        <main class="container-fluid overflow-auto w-100">
             @yield('content')
         </main>
     </div>
