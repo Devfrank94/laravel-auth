@@ -48,7 +48,7 @@
                   value="{{ old('image') }}"
                   class="form-control @error('image') is-invalid @enderror"
                   name="image"
-                  placeholder="Inserisci path immagine"
+                  placeholder="Inserisci link come nell'esempio variando le skills utilizzate nel progetto https://skillicons.dev/icons?i=github,laravel,vue,bootstrap"
                   type="text"
                 >
                 @error('image')
