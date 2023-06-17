@@ -74,6 +74,17 @@
                 <button type="submit" class="btn btn-success">Salva</button>
                 <button type="reset" class="btn btn-danger">Cancella</button>
             </form>
+
         </div>
     </main>
+
+    {{-- Script CK editor 5 --}}
+    <script>
+      ClassicEditor
+          .create( document.querySelector( '#description' ) )
+          .catch( error => {
+              console.error( error );
+          } );
+  </script>
+
 @endsection
