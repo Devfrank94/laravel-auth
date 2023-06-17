@@ -9,7 +9,7 @@
                 {{ session('trashElement') }}
             </div>
         @endif --}}
-    <div class="border border-1">
+    <div class="border border-1 mb-3">
     <table class="table table-hover mb-0">
         <thead>
             <tr>
@@ -42,7 +42,11 @@
                 @endforeach
             </tbody>
     </table>
-    </div>
+  </div>
+  {{-- Pagination --}}
+  <div>
+    {{ $projects->links() }}
+  </div>
 </div>
 </main>
 
