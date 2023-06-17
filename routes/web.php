@@ -33,6 +33,7 @@ Route::middleware(['auth', 'verified'])
     Route::get('/', [DashboardController::class, 'index'])->name('home');
     Route::get('/stats', [DashboardController::class, 'stats'])->name('stats');
     Route::resource('projects', ProjectController::class);
+    Route::get('orderby/{direction}', [ProjectController::class, 'orderby'])->name('orderby');
 });
 
 require __DIR__.'/auth.php';

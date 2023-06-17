@@ -13,7 +13,7 @@
     <table class="table table-hover mb-0">
         <thead>
             <tr>
-                <th scope="col">#ID</th>
+                <th scope="col"><a href="{{ route('admin.orderby', ['direction' => $direction]) }}" class="text-black">#ID</a></th>
                 <th scope="col">Titolo</th>
                 <th scope="col">Data inizio sviluppo</th>
             </tr>
