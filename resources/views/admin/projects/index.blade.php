@@ -3,7 +3,7 @@
 @section('content')
 <main>
 <div class="container my-4">
-    <h1 class="mb-4">Elenco Progetti</h1>
+    <h1 class="mb-4">Elenco Portfolio</h1>
         {{-- @if (session('trashElement'))
             <div class="alert alert-success" role="alert">
                 {{ session('trashElement') }}
