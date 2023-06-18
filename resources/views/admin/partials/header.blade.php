@@ -47,7 +47,7 @@
                   </li>
                   @endif
                   @else
-                  <li class="nav-item dropdown">
+                  <li class="nav-item dropdown me-5">
                       <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         <i class="fa-solid fa-user-secret" style="color: #ffffff;"></i>   {{ Auth::user()->name }}
                       </a>
