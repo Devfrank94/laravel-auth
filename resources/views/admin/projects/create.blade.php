@@ -25,7 +25,7 @@
                   value="{{ old('title') }}"
                   class="form-control @error('title') is-invalid @enderror"
                   name="title"
-                  placeholder="title"
+                  placeholder="Titolo progetto"
                   type="text"
                 >
                 @error('title')
@@ -35,20 +35,20 @@
 
             <div class="mb-4">
                 <label for="description" class="form-label">Descrizione (*)</label>
-                <textarea class="form-control"  name="description" id="description" cols="30" rows="10" placeholder="Descrizione">{{ old('description') }}</textarea>
+                <textarea class="form-control"  name="description" id="description" cols="30" rows="10" placeholder="Descrivi il progetto">{{ old('description') }}</textarea>
                 @error('description')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-4">
-                <label for="image" class="form-label">Immagine (*)</label>
+                <label for="image" class="form-label">Immagine (*) <br> Inserisci come nell'esempio le skills utilizzate nel progetto, scritte in piccolo e separate da virgola</label>
                 <input
                   id="image"
                   value="{{ old('image') }}"
                   class="form-control @error('image') is-invalid @enderror"
                   name="image"
-                  placeholder="Inserisci link come nell'esempio variando le skills utilizzate nel progetto https://skillicons.dev/icons?i=github,laravel,vue,bootstrap"
+                  placeholder="github,laravel,vue,bootstrap"
                   type="text"
                 >
                 @error('image')
@@ -63,7 +63,7 @@
                   value="{{ old('date') }}"
                   class="form-control @error('date') is-invalid @enderror"
                   name="date"
-                  placeholder="Data di inizio Sviluppo"
+                  placeholder="dd/mm/yyyy"
                   type="text"
                 >
                 @error('date')
