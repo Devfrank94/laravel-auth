@@ -6,9 +6,9 @@
     <h1 class="mb-4">Elenco Portfolio</h1>
 
     <a href="{{route('admin.projects.create')}}" class="btn btn-success mb-3"><i class="fa-solid fa-file-circle-plus"></i> Crea Nuovo Progetto</a>
-        @if (session('trashElement'))
+        @if (session('deleted'))
             <div class="alert alert-success" role="alert">
-                {{ session('trashElement') }}
+                {{ session('deleted') }}
             </div>
         @endif
     <div class="border border-1 mb-3">
