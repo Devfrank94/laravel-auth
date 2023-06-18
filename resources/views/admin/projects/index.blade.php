@@ -13,14 +13,17 @@
         @endif
     <div class="border border-1 mb-3">
     <table class="table table-hover mb-0">
-        <thead>
+        <thead class="text-center">
             <tr>
                 <th scope="col"><a href="{{ route('admin.orderby', ['direction' => $direction]) }}" class="text-black">#ID</a></th>
                 <th scope="col">Titolo</th>
                 <th scope="col">Data inizio sviluppo</th>
+                <th scope="col">Vedi</th>
+                <th scope="col">Modifica</th>
+                <th scope="col">Elimina</th>
             </tr>
         </thead>
-            <tbody>
+            <tbody class="text-center">
                 @foreach ($projects as $project)
                     <tr class="vertical-align-middle">
                         <th scope="row">{{$project->id}}</th>
@@ -35,7 +38,7 @@
                         <td>
                           <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-primary"><i class="fa-regular fa-pen-to-square" title="Modifica" style="color: #ffffff;"></i></a>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <form action="{{route('admin.projects.destroy', $project)}}" onsubmit="return confirm('Confermi l\'eliminazione di {{ $project->title }} ?')" method="POST">
 
                                 @csrf
