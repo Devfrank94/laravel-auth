@@ -57,7 +57,7 @@
             </div>
 
             <div class="mb-4">
-                <label for="date" class="form-label">Data inizio Sviluppo (*)</label>
+                <label for="date" class="form-label">Data inizio Sviluppo</label>
                 <input
                   id="date"
                   value="{{ old('date') }}"
