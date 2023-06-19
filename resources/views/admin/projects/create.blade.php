@@ -15,7 +15,7 @@
         @endif
 
 
-        <form action="{{ route('admin.projects.store') }}" method="POST">
+        <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-4">
@@ -54,6 +54,17 @@
                 @error('image')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
+            </div>
+
+            <div class="mb-4">
+                <label for="thumb" class="form-label">Immagine Progetto</label>
+                <input
+                  id="thumb"
+                  value="{{ old('thumb') }}"
+                  class="form-control @error('thumb') is-invalid @enderror"
+                  name="thumb"
+                  type="file"
+                >
             </div>
 
             <div class="mb-4">
