@@ -113,6 +113,20 @@ class ProjectController extends Controller
         $form_data['slug']  = $project->slug;
       }
 
+      if(array_key_exists('thumb', $form_data)){
+
+        // condizione che se immagine esiste e viene sostituita verrà eliminata dallo storage
+        if($project->image_path){
+          Storage::disk('public')->delete($project->image_path);
+        }
+
+        // Prima di salvare, salvo nome immagine
+        $form_data['image_original_name'] = $request->file('thumb')->getClientOriginalName();
+
+        // Salvo immagine in uploads e con il parametro accanto salvo il precorso
+        $form_data['image_path'] = Storage::put('uploads', $form_data['thumb']);
+      };
+
       $project->update($form_data);
 
       return redirect()->route('admin.projects.show', compact('project'));
