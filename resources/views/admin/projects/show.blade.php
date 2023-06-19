@@ -14,11 +14,11 @@
             </form>
         </h2>
 
-            <div class="d-flex justify-content-center mb-4">
-              <img class="w-75 mb-4 rounded-3" id="prev-image" src="{{ asset('storage/' . $project->image_path) }}" alt="{{ $project->title }}">
+            <div class="d-flex mb-4">
+              <img class="w-75 mb-4 rounded-3" id="prev-image" src="{{ asset('storage/' . $project->image_path) }}" onerror="this.src='/img/no_image.jpg'" alt="{{ $project->title }}">
             </div>
 
-            <div class="card-wrapper d-flex gap-3 w-75">
+          <div class="card-wrapper d-flex gap-3 w-75">
                 <img class="rounded w-50" src="https://skillicons.dev/icons?i={{ $project->image }}&perline=3" alt="{{$project->title}}" title="{{$project->title}}">
             <div class="card w-75">
                 <div class="card-body d-flex flex-column gap-1">

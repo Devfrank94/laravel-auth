@@ -65,7 +65,7 @@
                   name="thumb"
                   type="file"
                 >
-                <img class="mt-3 rounded-2" style="width: 200px" id="prev-image" src="" alt="">
+                <img class="mt-3 rounded-2" style="width: 200px" id="prev-image" src="" onerror="this.src='/img/no_image.jpg'" alt="">
             </div>
 
             <div class="mb-4">

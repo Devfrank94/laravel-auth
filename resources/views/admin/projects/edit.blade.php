@@ -58,6 +58,18 @@
             </div>
 
             <div class="mb-4">
+              <label for="thumb" class="form-label">Immagine Progetto</label>
+              <input
+                id="thumb"
+                onchange="showImage(event)"
+                class="form-control @error('thumb') is-invalid @enderror"
+                name="thumb"
+                type="file"
+              >
+              <img class="mt-3 rounded-2" style="width: 200px" id="prev-image" src="{{ asset('storage/' . $project->image_path) }}" onerror="this.src='/img/no_image.jpg'" alt="">
+          </div>
+
+            <div class="mb-4">
                 <label for="date" class="form-label">Data inizio Sviluppo</label>
                 <input
                   id="date"
