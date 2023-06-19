@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProjectRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -53,6 +54,15 @@ class ProjectController extends Controller
         $new_project = new Project();
         $form_data['slug'] = Project::generateSlug($form_data['title']);
         $form_data['date'] = date('Y-m-d');
+
+        if(array_key_exists('thumb', $form_data)){
+
+          // Prima di salvare, salvo nome immagine
+          $form_data['image_original_name'] = $request->file('thumb')->getClientOriginalName();
+
+          // Salvo immagine in uploads e con il parametro accanto salvo il precorso
+          $form_data['image_path'] = Storage::put('uploads', $form_data['thumb']);
+        };
 
 
         $new_project->fill($form_data);

@@ -14,7 +14,9 @@
             </form>
         </h2>
 
-
+            <div class="d-flex justify-content-center mb-4">
+              <img class="w-75 mb-4 rounded-3" id="prev-image" src="{{ asset('storage/' . $project->image_path) }}" alt="{{ $project->title }}">
+            </div>
 
             <div class="card-wrapper d-flex gap-3 w-100">
                 <img class="rounded w-50" src="https://skillicons.dev/icons?i={{ $project->image }}&perline=3" alt="{{$project->title}}" title="{{$project->title}}">
