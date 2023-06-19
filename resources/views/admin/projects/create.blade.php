@@ -60,11 +60,12 @@
                 <label for="thumb" class="form-label">Immagine Progetto</label>
                 <input
                   id="thumb"
-                  value="{{ old('thumb') }}"
+                  onchange="showImage(event)"
                   class="form-control @error('thumb') is-invalid @enderror"
                   name="thumb"
                   type="file"
                 >
+                <img class="mt-3 rounded-2" style="width: 200px" id="prev-image" src="" alt="">
             </div>
 
             <div class="mb-4">
@@ -96,6 +97,11 @@
           .catch( error => {
               console.error( error );
           } );
+
+      function showImage(event){
+        const tagImage = document.getElementById('prev-image');
+        tagImage.src = URL.createObjectURL(event.target.files[0]);
+      }
   </script>
 
 @endsection
