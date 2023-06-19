@@ -4,14 +4,11 @@
 @section('content')
 <main class="pt-3">
     <div class="container my-4">
-        <h2 class="mb-5">Dettaglio Progetto | {{$project->title}} <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-primary"><i class="fa-regular fa-pen-to-square" title="Modifica" style="color: #ffffff;"></i></a>
-            <form class="d-inline" action="{{route('admin.projects.destroy', $project)}}" onsubmit="return confirm('Confermi l\'eliminazione di {{ $project->title }} ?')" method="POST">
+        <h2 class="mb-5">Dettaglio Progetto | {{$project->title}}
+          <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-primary"><i class="fa-regular fa-pen-to-square" title="Modifica" style="color: #ffffff;"></i></a>
+          
+          @include('admin.partials.form-delete')
 
-                @csrf
-                @method('DELETE')
-
-                <button type="submit" class="btn btn-danger"><i class="fa-regular fa-trash-can" title="Elimina" style="color: #ffffff;"></i></button>
-            </form>
         </h2>
 
             <div class="d-flex mb-4">
