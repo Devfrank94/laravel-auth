@@ -98,6 +98,11 @@
           .catch( error => {
               console.error( error );
           } );
-  </script>
+
+      function showImage(event){
+      const tagImage = document.getElementById('prev-image');
+      tagImage.src = URL.createObjectURL(event.target.files[0]);
+      }
+    </script>
 
 @endsection
