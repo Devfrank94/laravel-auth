@@ -11,8 +11,9 @@
 
         </h2>
 
-        <div class="d-flex mb-4">
+        <div class="mb-4">
           <img class="w-75 mb-4 rounded-3" id="prev-image" src="{{ asset('storage/' . $project->image_path) }}" onerror="this.src='/img/no_image.jpg'" alt="{{ $project->title }}">
+          <p>Nome file:  {{ $project->image_original_name }}</p>
         </div>
 
         <div class="card-wrapper d-flex gap-3 w-75">
