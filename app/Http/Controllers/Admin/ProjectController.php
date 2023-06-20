@@ -113,19 +113,19 @@ class ProjectController extends Controller
         $form_data['slug']  = $project->slug;
       }
 
-      if(array_key_exists('thumb', $form_data)){
-
-        // condizione che se immagine esiste e viene sostituita verrà eliminata dallo storage
-        if($project->image_path){
-          Storage::disk('public')->delete($project->image_path);
+      if (array_key_exists('thumb', $form_data)) {
+        // Verifica se esiste un'immagine precedente e, se presente, eliminala dallo storage
+        if ($project->image_path) {
+            Storage::disk('public')->delete($project->image_path);
         }
 
-        // Prima di salvare, salvo nome immagine
+        // Prima di salvare, salva il nome originale dell'immagine
         $form_data['image_original_name'] = $request->file('thumb')->getClientOriginalName();
 
-        // Salvo immagine in uploads e con il parametro accanto salvo il precorso
-        $form_data['image_path'] = Storage::put('uploads', $form_data['thumb']);
-      };
+        // Salva l'immagine nella cartella "uploads" e memorizza il percorso
+        $form_data['image_path'] = Storage::put('uploads', $request->file('thumb'));
+    }
+
 
       $project->update($form_data);
 
@@ -140,6 +140,9 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+      if($project->image_path){
+        Storage::disk('public')->delete($project->image_path);
+      }
       $project->delete();
       return redirect()->route('admin.projects.index')->with('deleted', "Il progetto $project->title è stata eliminata correttamente");
     }

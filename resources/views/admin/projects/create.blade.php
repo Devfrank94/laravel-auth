@@ -61,7 +61,7 @@
                 <input
                   id="thumb"
                   onchange="showImage(event)"
-                  class="form-control @error('thumb') is-invalid @enderror"
+                  class="form-control"
                   name="thumb"
                   type="file"
                 >

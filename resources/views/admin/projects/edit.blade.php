@@ -15,7 +15,7 @@
         @endif
 
 
-        <form action="{{ route('admin.projects.update', $project) }}" method="POST">
+        <form action="{{ route('admin.projects.update', $project) }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             @method('PUT')
@@ -62,11 +62,11 @@
               <input
                 id="thumb"
                 onchange="showImage(event)"
-                class="form-control @error('thumb') is-invalid @enderror"
+                class="form-control"
                 name="thumb"
                 type="file"
               >
-              <img class="mt-3 rounded-2" style="width: 200px" id="prev-image" src="{{ asset('storage/' . $project->image_path) }}" onerror="this.src='/img/no_image.jpg'" alt="">
+              <img class="mt-3 rounded-2" style="width: 200px" id="prev-image" src="{{ asset('storage/' . $project->image_path) }}" onerror="this.src='/img/no_image.jpg'">
           </div>
 
             <div class="mb-4">
