@@ -20,7 +20,13 @@
 
             <h4 class="mb-3">Benvenuto nella tua Dashboard</h4>
             <p>Progetti in portfolio: {{ $num_projects }}</p>
-            <h4 class="mt-4 mb-3">Ultimo Progetto</h4>
+            <h4 class="mt-4 mb-3">Ultimo Progetto
+
+                <a href="{{route('admin.projects.show', $last_project)}}" class="btn btn-secondary"><i class="fa-regular fa-eye" title="Vedi" style="color: #ffffff;"></i></a>
+
+                <a href="{{route('admin.projects.edit', $last_project)}}" class="btn btn-primary"><i class="fa-regular fa-pen-to-square" title="Modifica" style="color: #ffffff;"></i></a>
+
+            </h4>
 
             <div>
               <div class="card-wrapper w-75 d-flex flex-column">
