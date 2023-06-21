@@ -29,7 +29,7 @@
                     <tr class="vertical-align-middle">
                         <th scope="row">{{$project->id}}</th>
                         <td>{{$project->title}}</td>
-                        <td><span class="badge text-bg-dark">{{ $project->type->name }}</span></td>
+                        <td><span class="badge text-bg-dark">{{ $project->type?->name }}</span></td>
                         @php
                           $date = date_create($project->date);
                         @endphp
