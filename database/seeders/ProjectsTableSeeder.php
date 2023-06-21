@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 // importo il model
 use App\Models\Project;
+use App\Models\Type;
 
 class ProjectsTableSeeder extends Seeder
 {
@@ -21,6 +22,7 @@ class ProjectsTableSeeder extends Seeder
         for($i = 0; $i < 20; $i++){
 
           $new_project = new Project();
+          $new_project->type_id = Type::inRandomOrder()->first()->id;
           $new_project->title = $faker->sentence();
           $new_project->slug = Project::generateSlug($new_project->title);
           $new_project->image = $faker->imageUrl(360, 360, 'Vue', false, 'Laravel', true, 'jpg');
