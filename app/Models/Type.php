@@ -9,6 +9,14 @@ use Illuminate\Support\Str;
 class Type extends Model
 {
     use HasFactory;
+
+    public function projects(){
+      return $this->hasMany(Projects::class);
+    }
+
+
+
+
     public static function generateSlug($str){
 
       $slug = Str::slug($str, '-');
