@@ -57,6 +57,17 @@
             </div>
 
             <div class="mb-4">
+              <label for="type_id" class="form-label">Tipo di Sviluppo</label>
+              <select class="form-select" name="type_id" id="type_id">
+                <option value="">Selezionare una tipologia di sviluppo</option>
+                @foreach ($types as $type)
+                  <option value="{{ $type->id }}" @if($type->id == old('type_id')) selected @endif>{{$type->name}}</option>
+                @endforeach
+              </select>
+            </div>
+
+
+            <div class="mb-4">
                 <label for="thumb" class="form-label">Immagine Progetto</label>
                 <input
                   id="thumb"

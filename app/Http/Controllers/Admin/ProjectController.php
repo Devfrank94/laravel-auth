@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProjectRequest;
 use Illuminate\Support\Facades\Storage;
@@ -38,7 +39,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+      $types = Type::all();
+        return view('admin.projects.create', compact('types'));
     }
 
     /**
@@ -76,11 +78,12 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project)
+    public function show(Project $project, Type $type)
     {
+      $types = Type::all();
       $date = date_create($project->date);
       $data_formatted = date_format($date, 'd/m/Y');
-      return view('admin.projects.show', compact('project', 'data_formatted'));
+      return view('admin.projects.show', compact('project', 'data_formatted', 'types'));
     }
 
     /**
@@ -91,6 +94,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
+
       return view('admin.projects.edit', compact('project'));
     }
 

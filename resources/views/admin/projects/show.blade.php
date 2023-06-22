@@ -21,6 +21,7 @@
           <div class="card w-75">
             <div class="card-body d-flex flex-column gap-1">
               <h5><div class="fw-bold">Nome Progetto:</div> {{$project->title}}</h5>
+              <p><div class="fw-bold">Tipologia di Sviluppo:</div><span class="badge text-bg-primary">{{ $project->type?->name}}</span></p>
               <p><div class="fw-bold">Descrizione:</div> {!!$project->description!!}</p>
               <span><div class="fw-bold">Data di inizio sviluppo:</div> {{ $data_formatted }}</span>
               <a href="{{route('admin.projects.index')}}" class=" btn btn-primary mt-5 w-100 fs-4 align-self-center">Indietro</a>

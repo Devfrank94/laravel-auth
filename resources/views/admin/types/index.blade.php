@@ -17,17 +17,17 @@
             <tr>
                 <th scope="col">Tipo Sviluppo</th>
                 <th scope="col">Num Progetti Associati</th>
+                {{-- <th scope="col">Azioni</th> --}}
             </tr>
         </thead>
             <tbody class="text-center">
                 @foreach ($types as $type)
                     <tr class="vertical-align-middle">
                         <th scope="row">{{$type->name}}</th>
-                        <td>{{ count($type->projects)}}</td>
-                        <td><span class="badge text-bg-dark">{{ $type->type?->name }}</span></td>
-                        <td>
+                        <td><span class="badge text-bg-primary">{{ count($type->projects)}}</span></td>
+                        {{-- <td>
                           <a href="{{route('admin.types.show', $type)}}" class="btn btn-secondary"><i class="fa-regular fa-eye" title="Vedi" style="color: #ffffff;"></i></a>
-                        </td>
+                        </td> --}}
                         {{-- <td>
                           <a href="{{route('admin.types.edit', $type)}}" class="btn btn-primary"><i class="fa-regular fa-pen-to-square" title="Modifica" style="color: #ffffff;"></i></a>
                         </td>
