@@ -27,6 +27,7 @@ class ProjectRequest extends FormRequest
         'title' => 'required|min:3|max:255',
         'description' => 'required',
         'image' => 'required',
+        'type_id' => 'required',
       ];
     }
 
@@ -37,6 +38,7 @@ class ProjectRequest extends FormRequest
             'title.required' => 'Il Titolo è un campo obbligatorio',
             'description.required' => 'La Descrizione è un campo obbligatorio',
             'image.required' => 'L\' immagine è un campo obbligatorio',
+            'type_id.required' => 'Il Tipo sviluppo è un campo obbligatorio',
 
             // Caratteri massimi
             'title.max' => 'Il Titolo può contenere al massimo :max caratteri',
